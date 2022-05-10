@@ -64,5 +64,49 @@ public class ExerciseThreePanel extends JPanel {
     private void drawHouse(Graphics g, int left, int top, int size) {
 
         // TODO Draw a house, as shown in the lab handout.
+
+//        MAIN BODY OF HOUSE
+        g.setColor(MAIN_COLOR);
+        g.fillRect(left, top + 5 * size, 10 * size, 7 * size);
+        g.setColor(OUTLINE_COLOR);
+        g.drawRect(left, top + 5 * size, 10 * size, 7 * size);
+
+//        CHIMNEY
+        g.setColor(CHIMNEY_COLOR);
+        g.fillRect(left + 7 * size, top + 1 * size, 1 * size, 4 * size);
+        g.setColor(OUTLINE_COLOR);
+        g.drawRect(left + 7 * size, top + 1 * size, 1 * size, 4 * size);
+
+//        ROOF
+        Polygon roof = new Polygon();
+        roof.addPoint(left, top + 5 * size);
+        roof.addPoint(left + 5 * size, top);
+        roof.addPoint(left + 10 * size, top + 5 * size);
+        g.setColor(ROOF_COLOR);
+        g.fillPolygon(roof);
+        g.setColor(OUTLINE_COLOR);
+        g.drawPolygon(roof);
+
+//        LEFT WINDOW
+        g.setColor(WINDOW_COLOR);
+        g.fillRect(left + 1 * size, top + 7 * size, 2 * size, 2 * size);
+        g.setColor(OUTLINE_COLOR);
+        g.drawRect(left + 1 * size, top + 7 * size, 2 * size, 2 * size);
+        g.drawLine(left + 1 * size, top + 8 * size, left + 3 * size, top + 8 * size);
+        g.drawLine(left + 2 * size, top + 7 * size, left + 2 * size, top + 9 * size);
+
+//        RIGHT WINDOW
+        g.setColor(WINDOW_COLOR);
+        g.fillRect(left + 7 * size, top + 7 * size, 2 * size, 2 * size);
+        g.setColor(OUTLINE_COLOR);
+        g.drawRect(left + 7 * size, top + 7 * size, 2 * size, 2 * size);
+        g.drawLine(left + 7 * size, top + 8 * size, left + 9 * size, top + 8 * size);
+        g.drawLine(left + 8 * size, top + 7 * size, left + 8 * size, top + 9 * size);
+
+//        DOOR
+        g.setColor(DOOR_COLOR);
+        g.fillRect(left + 4 * size, top + 8 * size, 2 * size, 4 * size);
+        g.setColor(OUTLINE_COLOR);
+        g.drawRect(left + 4 * size, top + 8 * size, 2 * size, 4 * size);
     }
 }
